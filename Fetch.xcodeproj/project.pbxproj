@@ -22,6 +22,7 @@
 		F20BCC51182565C700FB103C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F20BCC30182565C700FB103C /* UIKit.framework */; };
 		F20BCC59182565C700FB103C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F20BCC57182565C700FB103C /* InfoPlist.strings */; };
 		F20BCC5B182565C700FB103C /* FetchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F20BCC5A182565C700FB103C /* FetchTests.m */; };
+		F20BCC6518256D7F00FB103C /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F20BCC6418256D7F00FB103C /* CoreLocation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		F20BCC56182565C700FB103C /* FetchTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FetchTests-Info.plist"; sourceTree = "<group>"; };
 		F20BCC58182565C700FB103C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		F20BCC5A182565C700FB103C /* FetchTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FetchTests.m; sourceTree = "<group>"; };
+		F20BCC6418256D7F00FB103C /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F20BCC6518256D7F00FB103C /* CoreLocation.framework in Frameworks */,
 				F20BCC2F182565C700FB103C /* CoreGraphics.framework in Frameworks */,
 				F20BCC31182565C700FB103C /* UIKit.framework in Frameworks */,
 				F20BCC2D182565C700FB103C /* Foundation.framework in Frameworks */,
@@ -103,6 +106,7 @@
 		F20BCC2B182565C700FB103C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F20BCC6418256D7F00FB103C /* CoreLocation.framework */,
 				F20BCC2C182565C700FB103C /* Foundation.framework */,
 				F20BCC2E182565C700FB103C /* CoreGraphics.framework */,
 				F20BCC30182565C700FB103C /* UIKit.framework */,
@@ -474,6 +478,7 @@
 				F20BCC60182565C700FB103C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F20BCC61182565C700FB103C /* Build configuration list for PBXNativeTarget "FetchTests" */ = {
 			isa = XCConfigurationList;
@@ -482,6 +487,7 @@
 				F20BCC63182565C700FB103C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
