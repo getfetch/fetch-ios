@@ -17,6 +17,8 @@
 @implementation ViewController
 
 CLLocationManager *locationManager;
+NSString *zipCode;
+bool gettingZipCode;
 
 - (void)viewDidLoad
 {
@@ -34,6 +36,17 @@ CLLocationManager *locationManager;
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)getDogs
+{
+    UIAlertView *alert = [[UIAlertView alloc]
+                          initWithTitle:@"Getting Dogs"
+                          message:[NSString stringWithFormat:
+                                   @"Getting dogs for location %@", zipCode]
+                          delegate:nil
+                          cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    [alert show];
 }
 
 #pragma mark - CLLocationManagerDelegate
@@ -62,7 +75,8 @@ CLLocationManager *locationManager;
     NSLog(@"didUpdateToLocation: %@", newLocation);
     CLLocation *currentLocation = newLocation;
     
-    if (currentLocation != nil) {
+    if (currentLocation != nil && !gettingZipCode) {
+        gettingZipCode = true;
         CLGeocoder *geocoder = [[CLGeocoder alloc] init];
 
         [self.zipCodeActivity startAnimating];
@@ -72,8 +86,10 @@ CLLocationManager *locationManager;
                        completionHandler:^(NSArray *placemarks, NSError *error) {
                            if(error == nil && [placemarks count] > 0) {
                                CLPlacemark *placemark = [placemarks lastObject];
+                               zipCode = placemark.postalCode;
                                self.zipCodeLabel.text = placemark.postalCode;
                                [locationManager stopUpdatingLocation];
+                               [self getDogs];
                            } else {
                                NSLog(@"%@", error.debugDescription);
                                self.zipCodeLabel.text = @"Error";
@@ -81,6 +97,7 @@ CLLocationManager *locationManager;
                            NSLog(@"Done getting zip code");
                            [self.zipCodeActivity stopAnimating];
                            [self.zipCodeLabel setHidden:false];
+                           gettingZipCode = false;
         }];
     }
 }
