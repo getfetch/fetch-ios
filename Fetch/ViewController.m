@@ -44,6 +44,11 @@ NSMutableArray *dogs;
     // Dispose of any resources that can be recreated.
 }
 
+- (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation
+{
+    [self.dogsView performBatchUpdates:nil completion:nil];
+}
+
 - (void)getDogs
 {
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
@@ -139,6 +144,23 @@ NSMutableArray *dogs;
     
     cell.dog = dogs[indexPath.row];
     return cell;
+}
+
+-(CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
+    
+    CGFloat width;
+    if (UIDeviceOrientationIsLandscape([[UIApplication sharedApplication] statusBarOrientation]))
+        width = [[UIScreen mainScreen] bounds].size.height;
+    else
+        width = [[UIScreen mainScreen] bounds].size.width;
+    
+    if(width > 700) {
+        return CGSizeMake(235, 235);
+    } else if(width > 480){
+        return CGSizeMake(169, 160);
+    } else {
+        return CGSizeMake(135, 135);
+    }
 }
 
 @end
