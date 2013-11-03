@@ -114,12 +114,23 @@
                                     <outlet property="delegate" destination="vXZ-lx-hvc" id="Cca-K0-LVh"/>
                                 </connections>
                             </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6cB-Xq-OWR">
+                                <rect key="frame" x="206" y="45" width="94" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Test .NET API">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="testAPI:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="JB4-q0-apv"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="Aeo-oV-Sd3" secondAttribute="centerX" id="3cy-8v-YRv"/>
                             <constraint firstAttribute="trailing" secondItem="fKT-2M-FRg" secondAttribute="trailing" constant="20" id="53W-mH-n8V"/>
                             <constraint firstItem="fKT-2M-FRg" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="20" id="69y-h2-N3v"/>
+                            <constraint firstItem="6cB-Xq-OWR" firstAttribute="baseline" secondItem="Aeo-oV-Sd3" secondAttribute="baseline" id="KcX-Nt-kby"/>
                             <constraint firstItem="2DI-Sd-t4g" firstAttribute="bottom" secondItem="Aeo-oV-Sd3" secondAttribute="bottom" id="M9v-oJ-Bso"/>
                             <constraint firstItem="fKT-2M-FRg" firstAttribute="top" secondItem="2DI-Sd-t4g" secondAttribute="bottom" constant="8" id="Mxg-h9-ShV"/>
                             <constraint firstItem="2DI-Sd-t4g" firstAttribute="leading" secondItem="Aeo-oV-Sd3" secondAttribute="trailing" constant="8" id="NrB-2b-vqg"/>
@@ -128,11 +139,13 @@
                             <constraint firstItem="Aeo-oV-Sd3" firstAttribute="top" secondItem="ua8-aY-odg" secondAttribute="bottom" constant="1" id="be9-rB-bPA"/>
                             <constraint firstItem="ua8-aY-odg" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="cLh-40-yGz"/>
                             <constraint firstItem="Aeo-oV-Sd3" firstAttribute="leading" secondItem="97G-h3-APA" secondAttribute="trailing" constant="8" id="ppr-4D-nSj"/>
+                            <constraint firstAttribute="trailing" secondItem="6cB-Xq-OWR" secondAttribute="trailing" constant="20" id="rz4-3O-1P2"/>
                             <constraint firstItem="2DI-Sd-t4g" firstAttribute="bottom" secondItem="97G-h3-APA" secondAttribute="bottom" id="xUV-t3-OMx"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="dogsView" destination="fKT-2M-FRg" id="ELO-JY-NBx"/>
+                        <outlet property="testButton" destination="6cB-Xq-OWR" id="sfS-em-XNi"/>
                         <outlet property="zipCodeActivity" destination="2DI-Sd-t4g" id="CEH-XJ-JZC"/>
                         <outlet property="zipCodeLabel" destination="Aeo-oV-Sd3" id="DBb-Xf-Arg"/>
                     </connections>

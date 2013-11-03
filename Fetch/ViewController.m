@@ -14,6 +14,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *zipCodeLabel;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *zipCodeActivity;
 @property (weak, nonatomic) IBOutlet UICollectionView *dogsView;
+@property (weak, nonatomic) IBOutlet UIButton *testButton;
 
 @end
 
@@ -66,6 +67,41 @@ NSMutableArray *dogs;
         
         dispatch_async(dispatch_get_main_queue(), ^{
             [self.dogsView reloadData];
+        });
+    });
+}
+
+- (IBAction)testAPI:(id)sender {
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+
+        NSString *urlString = [NSString stringWithFormat:
+                               @"http://getfetch-cw.azurewebsites.net/api/dogs/browse/%@",
+                               zipCode];
+        NSData* data = [NSData dataWithContentsOfURL:
+                        [NSURL URLWithString:urlString]];
+        NSError* error;
+        NSDictionary *json = [NSJSONSerialization
+                         JSONObjectWithData:data
+                         options:kNilOptions
+                         error:&error];
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            NSArray *dogs = [json objectForKey:@"Dogs"];
+            NSString *message = [NSString stringWithFormat:
+                                 @"Zip Code: %@\n%ld dogs",
+                                 [json objectForKey:@"Zip"],
+                                 (unsigned long)[dogs count]];
+            for(int i = 0; i < [dogs count]; i++)
+                message = [NSString stringWithFormat:@"%@\n%@ the %@",
+                           message,
+                           [dogs[i] objectForKey:@"Name"],
+                           [dogs[i] objectForKey:@"Breed"]];
+            UIAlertView *errorAlert = [[UIAlertView alloc]
+                                       initWithTitle:@"API Test"
+                                       message:message
+                                       delegate:nil
+                                       cancelButtonTitle:@"OK" otherButtonTitles:nil];
+            [errorAlert show];
         });
     });
 }
