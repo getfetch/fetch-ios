@@ -450,15 +450,15 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"/Users/amcoder/Projects/fetch/fetch-ios",
-					"/Users/amcoder/Projects/fetch/fetch-ios/Frameworks",
+					.,
+					./Frameworks,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Fetch/Fetch-Prefix.pch";
 				INFOPLIST_FILE = "Fetch/Fetch-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"/Users/amcoder/Projects/fetch/fetch-ios/Frameworks/TestFlightSDK",
+					./Frameworks/TestFlightSDK,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -475,15 +475,15 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"/Users/amcoder/Projects/fetch/fetch-ios",
-					"/Users/amcoder/Projects/fetch/fetch-ios/Frameworks",
+					.,
+					./Frameworks,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Fetch/Fetch-Prefix.pch";
 				INFOPLIST_FILE = "Fetch/Fetch-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"/Users/amcoder/Projects/fetch/fetch-ios/Frameworks/TestFlightSDK",
+					./Frameworks/TestFlightSDK,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
