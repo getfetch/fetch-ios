@@ -38,9 +38,9 @@
         
         self.label.text = dog.name;
         
-        if([self.gradientView.subviews count] < 2) {
+        if([self.gradientView.layer.sublayers count] < 2) {
             CAGradientLayer *gradient = [CAGradientLayer layer];
-            gradient.frame = self.gradientView.bounds;
+            gradient.frame = CGRectMake(0, 0, 300, self.gradientView.bounds.size.height);
             gradient.colors = [NSArray arrayWithObjects:
                                (id)[[UIColor colorWithRed:0/255.0
                                                     green:0/255.0
