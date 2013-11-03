@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import <NewRelicAgent/NewRelicAgent.h>
+#import "TestFlight.h"
 
 @implementation AppDelegate
 
@@ -15,6 +16,9 @@
 {
     // Override point for customization after application launch.
     [NewRelicAgent startWithApplicationToken:@"AAaab8954016735262a8dad30a30b7d9c5873564a8"];
+    
+    // Start TestFlight
+    [TestFlight takeOff:@"ccca49ac-f533-44af-816e-be642d580703"];
     
     return YES;
 }

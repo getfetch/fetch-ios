@@ -28,6 +28,9 @@
 		F20BCC6D182588A200FB103C /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F20BCC6C182588A200FB103C /* libz.dylib */; };
 		F20BCC701825C3E100FB103C /* DogCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F20BCC6F1825C3E100FB103C /* DogCell.m */; };
 		F20BCC731825D59D00FB103C /* Dog.m in Sources */ = {isa = PBXBuildFile; fileRef = F20BCC721825D59D00FB103C /* Dog.m */; };
+		F20BCC7C1826E81900FB103C /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = F20BCC761826E81900FB103C /* README.md */; };
+		F20BCC7D1826E81900FB103C /* release_notes.md in Resources */ = {isa = PBXBuildFile; fileRef = F20BCC771826E81900FB103C /* release_notes.md */; };
+		F20BCC801826ECBA00FB103C /* libTestFlight.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F20BCC751826E81900FB103C /* libTestFlight.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,7 +64,7 @@
 		F20BCC58182565C700FB103C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		F20BCC5A182565C700FB103C /* FetchTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FetchTests.m; sourceTree = "<group>"; };
 		F20BCC6418256D7F00FB103C /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		F20BCC661825887100FB103C /* NewRelicAgent.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = NewRelicAgent.framework; sourceTree = "<group>"; };
+		F20BCC661825887100FB103C /* NewRelicAgent.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NewRelicAgent.framework; path = Frameworks/NewRelicAgent.framework; sourceTree = "<group>"; };
 		F20BCC681825888C00FB103C /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		F20BCC6A1825889800FB103C /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		F20BCC6C182588A200FB103C /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
@@ -69,6 +72,13 @@
 		F20BCC6F1825C3E100FB103C /* DogCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DogCell.m; sourceTree = "<group>"; };
 		F20BCC711825D59D00FB103C /* Dog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Dog.h; sourceTree = "<group>"; };
 		F20BCC721825D59D00FB103C /* Dog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Dog.m; sourceTree = "<group>"; };
+		F20BCC751826E81900FB103C /* libTestFlight.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libTestFlight.a; sourceTree = "<group>"; };
+		F20BCC761826E81900FB103C /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		F20BCC771826E81900FB103C /* release_notes.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = release_notes.md; sourceTree = "<group>"; };
+		F20BCC781826E81900FB103C /* TestFlight+AsyncLogging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TestFlight+AsyncLogging.h"; sourceTree = "<group>"; };
+		F20BCC791826E81900FB103C /* TestFlight+ManualSessions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TestFlight+ManualSessions.h"; sourceTree = "<group>"; };
+		F20BCC7A1826E81900FB103C /* TestFlight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestFlight.h; sourceTree = "<group>"; };
+		F20BCC7E1826EB8800FB103C /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +87,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F20BCC6D182588A200FB103C /* libz.dylib in Frameworks */,
+				F20BCC801826ECBA00FB103C /* libTestFlight.a in Frameworks */,
 				F20BCC6B1825889800FB103C /* SystemConfiguration.framework in Frameworks */,
 				F20BCC691825888C00FB103C /* CoreTelephony.framework in Frameworks */,
 				F20BCC6518256D7F00FB103C /* CoreLocation.framework in Frameworks */,
@@ -103,6 +114,7 @@
 		F20BCC20182565C700FB103C = {
 			isa = PBXGroup;
 			children = (
+				F20BCC7E1826EB8800FB103C /* README.md */,
 				F20BCC32182565C700FB103C /* Fetch */,
 				F20BCC54182565C700FB103C /* FetchTests */,
 				F20BCC2B182565C700FB103C /* Frameworks */,
@@ -122,6 +134,7 @@
 		F20BCC2B182565C700FB103C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F20BCC741826E81900FB103C /* TestFlightSDK */,
 				F20BCC6C182588A200FB103C /* libz.dylib */,
 				F20BCC6A1825889800FB103C /* SystemConfiguration.framework */,
 				F20BCC681825888C00FB103C /* CoreTelephony.framework */,
@@ -180,6 +193,20 @@
 				F20BCC57182565C700FB103C /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F20BCC741826E81900FB103C /* TestFlightSDK */ = {
+			isa = PBXGroup;
+			children = (
+				F20BCC751826E81900FB103C /* libTestFlight.a */,
+				F20BCC761826E81900FB103C /* README.md */,
+				F20BCC771826E81900FB103C /* release_notes.md */,
+				F20BCC781826E81900FB103C /* TestFlight+AsyncLogging.h */,
+				F20BCC791826E81900FB103C /* TestFlight+ManualSessions.h */,
+				F20BCC7A1826E81900FB103C /* TestFlight.h */,
+			);
+			name = TestFlightSDK;
+			path = Frameworks/TestFlightSDK;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -263,7 +290,9 @@
 			files = (
 				F20BCC48182565C700FB103C /* Images.xcassets in Resources */,
 				F20BCC40182565C700FB103C /* Main_iPhone.storyboard in Resources */,
+				F20BCC7C1826E81900FB103C /* README.md in Resources */,
 				F20BCC37182565C700FB103C /* InfoPlist.strings in Resources */,
+				F20BCC7D1826E81900FB103C /* release_notes.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -422,10 +451,15 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"/Users/amcoder/Projects/fetch/fetch-ios",
+					"/Users/amcoder/Projects/fetch/fetch-ios/Frameworks",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Fetch/Fetch-Prefix.pch";
 				INFOPLIST_FILE = "Fetch/Fetch-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/amcoder/Projects/fetch/fetch-ios/Frameworks/TestFlightSDK",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
@@ -442,10 +476,15 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"/Users/amcoder/Projects/fetch/fetch-ios",
+					"/Users/amcoder/Projects/fetch/fetch-ios/Frameworks",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Fetch/Fetch-Prefix.pch";
 				INFOPLIST_FILE = "Fetch/Fetch-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/amcoder/Projects/fetch/fetch-ios/Frameworks/TestFlightSDK",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
