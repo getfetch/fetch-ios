@@ -55,6 +55,8 @@
             [self.gradientView.layer insertSublayer:gradient atIndex:0];
         }
 
+        self.imageView.image = nil;
+        
         if(dog.photoCached) {
             self.imageView.image = dog.photo;
             
