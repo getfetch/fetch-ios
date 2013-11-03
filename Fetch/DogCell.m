@@ -57,6 +57,15 @@
 
         if(dog.photoCached) {
             self.imageView.image = dog.photo;
+            
+            // Fade in, but only if it is the first time we've displayed this image
+            if(!dog.imageDisplayed) {
+                self.imageView.alpha = 0.0;
+                [UIView animateWithDuration:0.5 animations:^{
+                    self.imageView.alpha = 1.0;
+                }];
+                dog.imageDisplayed = true;
+            }
         } else {
             [dog photoWithBlock:^(Dog* photoDog) {
                 dispatch_async(dispatch_get_main_queue(), ^{

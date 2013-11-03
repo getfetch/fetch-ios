@@ -12,6 +12,7 @@
 @property (readonly) NSString *name;
 @property (readonly) NSURL *photoURL;
 @property (readonly, nonatomic) UIImage *photo;
+@property bool imageDisplayed;
 
 -(bool)photoCached;
 
