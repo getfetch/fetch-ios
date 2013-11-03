@@ -7,10 +7,13 @@
 //
 
 #import "ViewController.h"
+#import "Dog.h"
+#import "DogCell.h"
 
 @interface ViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *zipCodeLabel;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *zipCodeActivity;
+@property (weak, nonatomic) IBOutlet UICollectionView *dogsView;
 
 @end
 
@@ -19,6 +22,7 @@
 CLLocationManager *locationManager;
 NSString *zipCode;
 bool gettingZipCode;
+NSMutableArray *dogs;
 
 - (void)viewDidLoad
 {
@@ -30,6 +34,8 @@ bool gettingZipCode;
     locationManager.delegate = self;
     locationManager.desiredAccuracy = kCLLocationAccuracyKilometer;
     [locationManager startUpdatingLocation];
+    
+    self.dogsView.backgroundColor = [UIColor colorWithWhite:1.0f alpha:1.0f];
 }
 
 - (void)didReceiveMemoryWarning
@@ -40,13 +46,23 @@ bool gettingZipCode;
 
 - (void)getDogs
 {
-    UIAlertView *alert = [[UIAlertView alloc]
-                          initWithTitle:@"Getting Dogs"
-                          message:[NSString stringWithFormat:
-                                   @"Getting dogs for location %@", zipCode]
-                          delegate:nil
-                          cancelButtonTitle:@"OK" otherButtonTitles:nil];
-    [alert show];
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        NSData* data = [NSData dataWithContentsOfURL:
+                        [NSURL URLWithString:@"http://getfetch.co/data/dogs.json"]];
+        NSError* error;
+        NSArray *json = [NSJSONSerialization
+                JSONObjectWithData:data
+                options:kNilOptions
+                error:&error];
+        
+        dogs = [[NSMutableArray alloc] init];
+        for(int i = 0; i < [json count]; i++)
+            [dogs addObject:[[Dog alloc]initWithDictionary:json[i]]];
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.dogsView reloadData];
+        });
+    });
 }
 
 #pragma mark - CLLocationManagerDelegate
@@ -100,6 +116,29 @@ bool gettingZipCode;
                            gettingZipCode = false;
         }];
     }
+}
+
+#pragma mark UICollectionViewDataSource
+
+- (NSInteger)collectionView:(UICollectionView *)collectionView
+     numberOfItemsInSection:(NSInteger)section
+{
+    if(dogs)
+        return [dogs count];
+    else
+        return 0;
+}
+
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView
+                  cellForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    DogCell *cell = [collectionView
+                     dequeueReusableCellWithReuseIdentifier:@"DogCell"
+                     forIndexPath:indexPath];
+    
+    cell.dog = dogs[indexPath.row];
+    return cell;
 }
 
 @end

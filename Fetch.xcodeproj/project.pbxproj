@@ -26,6 +26,8 @@
 		F20BCC691825888C00FB103C /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F20BCC681825888C00FB103C /* CoreTelephony.framework */; };
 		F20BCC6B1825889800FB103C /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F20BCC6A1825889800FB103C /* SystemConfiguration.framework */; };
 		F20BCC6D182588A200FB103C /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F20BCC6C182588A200FB103C /* libz.dylib */; };
+		F20BCC701825C3E100FB103C /* DogCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F20BCC6F1825C3E100FB103C /* DogCell.m */; };
+		F20BCC731825D59D00FB103C /* Dog.m in Sources */ = {isa = PBXBuildFile; fileRef = F20BCC721825D59D00FB103C /* Dog.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +65,10 @@
 		F20BCC681825888C00FB103C /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		F20BCC6A1825889800FB103C /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		F20BCC6C182588A200FB103C /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		F20BCC6E1825C3E100FB103C /* DogCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DogCell.h; sourceTree = "<group>"; };
+		F20BCC6F1825C3E100FB103C /* DogCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DogCell.m; sourceTree = "<group>"; };
+		F20BCC711825D59D00FB103C /* Dog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Dog.h; sourceTree = "<group>"; };
+		F20BCC721825D59D00FB103C /* Dog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Dog.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,8 +141,12 @@
 				F20BCC3B182565C700FB103C /* AppDelegate.h */,
 				F20BCC3C182565C700FB103C /* AppDelegate.m */,
 				F20BCC3E182565C700FB103C /* Main_iPhone.storyboard */,
+				F20BCC6E1825C3E100FB103C /* DogCell.h */,
+				F20BCC6F1825C3E100FB103C /* DogCell.m */,
 				F20BCC44182565C700FB103C /* ViewController.h */,
 				F20BCC45182565C700FB103C /* ViewController.m */,
+				F20BCC711825D59D00FB103C /* Dog.h */,
+				F20BCC721825D59D00FB103C /* Dog.m */,
 				F20BCC47182565C700FB103C /* Images.xcassets */,
 				F20BCC33182565C700FB103C /* Supporting Files */,
 			);
@@ -274,6 +284,8 @@
 			files = (
 				F20BCC46182565C700FB103C /* ViewController.m in Sources */,
 				F20BCC3D182565C700FB103C /* AppDelegate.m in Sources */,
+				F20BCC731825D59D00FB103C /* Dog.m in Sources */,
+				F20BCC701825C3E100FB103C /* DogCell.m in Sources */,
 				F20BCC39182565C700FB103C /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

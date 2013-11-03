@@ -46,13 +46,85 @@
                                 <rect key="frame" x="192" y="50" width="20" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </activityIndicatorView>
+                            <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="fKT-2M-FRg">
+                                <rect key="frame" x="20" y="78" width="280" height="470"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="793-r5-DIx">
+                                    <size key="itemSize" width="135" height="135"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="DogCell" id="5KK-Zl-sLU" customClass="DogCell">
+                                        <rect key="frame" x="0.0" y="0.0" width="135" height="135"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="135" height="135"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="IVP-vy-emJ">
+                                                    <rect key="frame" x="0.0" y="0.0" width="135" height="135"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                </imageView>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dk8-ji-xuE">
+                                                    <rect key="frame" x="0.0" y="104" width="135" height="31"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <subviews>
+                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I2v-A6-I5J">
+                                                            <rect key="frame" x="5" y="5" width="125" height="21"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="21" id="bD6-B6-HPu"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <nil key="highlightedColor"/>
+                                                            <size key="shadowOffset" width="2" height="-1"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstAttribute="bottom" secondItem="I2v-A6-I5J" secondAttribute="bottom" constant="5" id="5z0-qk-b2N"/>
+                                                        <constraint firstItem="I2v-A6-I5J" firstAttribute="leading" secondItem="dk8-ji-xuE" secondAttribute="leading" constant="5" id="cN1-sZ-HV3"/>
+                                                        <constraint firstAttribute="height" constant="31" id="fJ7-kw-R5m"/>
+                                                        <constraint firstAttribute="trailing" secondItem="I2v-A6-I5J" secondAttribute="trailing" constant="5" id="vgW-Pe-VGc"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="dk8-ji-xuE" secondAttribute="trailing" id="8rM-sy-OlX"/>
+                                            <constraint firstAttribute="trailing" secondItem="IVP-vy-emJ" secondAttribute="trailing" id="Ahr-Sr-Bo1"/>
+                                            <constraint firstAttribute="bottom" secondItem="dk8-ji-xuE" secondAttribute="bottom" id="Azy-RZ-laa"/>
+                                            <constraint firstItem="dk8-ji-xuE" firstAttribute="leading" secondItem="5KK-Zl-sLU" secondAttribute="leading" id="G1y-ua-hH5"/>
+                                            <constraint firstItem="IVP-vy-emJ" firstAttribute="top" secondItem="5KK-Zl-sLU" secondAttribute="top" id="Plz-v1-IK6"/>
+                                            <constraint firstItem="IVP-vy-emJ" firstAttribute="leading" secondItem="5KK-Zl-sLU" secondAttribute="leading" id="WKT-VL-XB3"/>
+                                            <constraint firstAttribute="bottom" secondItem="IVP-vy-emJ" secondAttribute="bottom" id="Z0I-yp-QgV"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="gradientView" destination="dk8-ji-xuE" id="KDG-UI-bHz"/>
+                                            <outlet property="imageView" destination="IVP-vy-emJ" id="Cse-RB-8Rh"/>
+                                            <outlet property="label" destination="I2v-A6-I5J" id="gWB-Rl-0uh"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="vXZ-lx-hvc" id="WVE-B5-2Y9"/>
+                                    <outlet property="delegate" destination="vXZ-lx-hvc" id="Cca-K0-LVh"/>
+                                </connections>
+                            </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="Aeo-oV-Sd3" secondAttribute="centerX" id="3cy-8v-YRv"/>
+                            <constraint firstAttribute="trailing" secondItem="fKT-2M-FRg" secondAttribute="trailing" constant="20" id="53W-mH-n8V"/>
+                            <constraint firstItem="fKT-2M-FRg" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="20" id="69y-h2-N3v"/>
                             <constraint firstItem="2DI-Sd-t4g" firstAttribute="bottom" secondItem="Aeo-oV-Sd3" secondAttribute="bottom" id="M9v-oJ-Bso"/>
+                            <constraint firstItem="fKT-2M-FRg" firstAttribute="top" secondItem="2DI-Sd-t4g" secondAttribute="bottom" constant="8" id="Mxg-h9-ShV"/>
                             <constraint firstItem="2DI-Sd-t4g" firstAttribute="leading" secondItem="Aeo-oV-Sd3" secondAttribute="trailing" constant="8" id="NrB-2b-vqg"/>
                             <constraint firstItem="ua8-aY-odg" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" constant="20" symbolic="YES" id="Y05-pI-37n"/>
+                            <constraint firstItem="6Ty-qa-dkc" firstAttribute="top" secondItem="fKT-2M-FRg" secondAttribute="bottom" constant="20" id="a5F-Sg-1TN"/>
                             <constraint firstItem="Aeo-oV-Sd3" firstAttribute="top" secondItem="ua8-aY-odg" secondAttribute="bottom" constant="1" id="be9-rB-bPA"/>
                             <constraint firstItem="ua8-aY-odg" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="cLh-40-yGz"/>
                             <constraint firstItem="Aeo-oV-Sd3" firstAttribute="leading" secondItem="97G-h3-APA" secondAttribute="trailing" constant="8" id="ppr-4D-nSj"/>
@@ -60,6 +132,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="dogsView" destination="fKT-2M-FRg" id="ELO-JY-NBx"/>
                         <outlet property="zipCodeActivity" destination="2DI-Sd-t4g" id="CEH-XJ-JZC"/>
                         <outlet property="zipCodeLabel" destination="Aeo-oV-Sd3" id="DBb-Xf-Arg"/>
                     </connections>
